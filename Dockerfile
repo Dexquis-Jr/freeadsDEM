@@ -26,8 +26,14 @@ RUN cp .env.example .env
 
 RUN php artisan key:generate
 
+ENV APACHE_DOCUMENT_ROOT /var/www/html/public
 
-RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+
+RUN chown -R www-data:www-data /var/www/html \
+    && chmod -R 755 /var/www/html
+
 
 EXPOSE 8080
 CMD ["apache2-foreground"]
+
+
