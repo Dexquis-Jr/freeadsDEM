@@ -16,9 +16,9 @@ Route::get('/', [AdsController::class, 'indexOther']);
 // Route::get('/dashboard', [DisplayUserController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 // Route::delete('/dashboard', [DisplayUserController::class, 'delete'])->middleware(['auth', 'verified'])->name('destroy');
 
-Route::get('/dashboard/user', function () {
-    return view('indexUser');
-})->middleware(['auth', 'verified'])->name('indexUser');
+// Route::get('/dashboard/user', function () {
+//     return view('indexUser');
+// })->middleware(['auth', 'verified'])->name('indexUser');
 
  Route::get('/dashboard', [DisplayUserController::class, 'index'])->middleware(['auth', 'verified','admin'])->name('dashboard');
 
