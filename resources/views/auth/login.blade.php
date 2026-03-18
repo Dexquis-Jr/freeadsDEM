@@ -1,4 +1,6 @@
-<x-guest-layout>
+@extends('layouts.guest')
+
+@section('content')
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
@@ -49,4 +51,5 @@
     <footer class="text-center text-gray-500 text-sm py-6">
         © {{ date('Y') }} FreeAds - Tous droits réservés
     </footer>
-</x-guest-layout>
+@endsection
+

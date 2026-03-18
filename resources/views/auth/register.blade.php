@@ -1,4 +1,6 @@
-<x-guest-layout>
+@extends('layouts.guest')
+
+@section('content')
     <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
         @csrf
 
@@ -46,11 +48,9 @@
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
         </div>
 
-        {{-- Photo --}}
-
+        <!-- Photo -->
         <div class="mt-4">
             <label>Photo de profil</label>
-
             <input type="file" name="image">
         </div>
 
@@ -62,11 +62,11 @@
 
             <button class="ms-4">
                 {{ __('Register') }}
-                </xutton>
+            </button>
         </div>
     </form>
 
     <footer class="text-center text-gray-500 text-sm py-6">
         © {{ date('Y') }} FreeAds - Tous droits réservés
     </footer>
-</x-guest-layout>
+@endsection
